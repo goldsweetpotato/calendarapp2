@@ -167,7 +167,7 @@ if entered_prompt := st.chat_input("What does my day look like?"):
 
     # get a response from the agent
     st_callback = StreamlitCallbackHandler(st.container())
-    response = agent.invoke({"input": entered_prompt}, {"callbacks": [st_callback, ConsoleCallbackHandler()]})
+    response = agent.invoke({"input": msgs}, {"callbacks": [st_callback, ConsoleCallbackHandler()]})
 
     # Add AI response.
     response = response["output"]
